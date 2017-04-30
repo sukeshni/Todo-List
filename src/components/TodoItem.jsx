@@ -2,9 +2,14 @@ import React from 'react';
 
 class TodoItem extends React.Component {
   render() {
-    return <li style={{
+    return (
+      <li style={{
         textDecoration: this.props.done ? 'line-through' : 'none'
-      }}>{this.props.name}</li>
+      }}>
+      {this.props.name}
+      <a href='#' onClick={this.props.onToggleDone}>{this.props.done ? ' Marks as not done' : ' Mark as done'}</a>
+      </li>
+    );
   }
 }
 
